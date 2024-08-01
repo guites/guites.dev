@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whats up? | 🦝 guites webpage</title>
+    <style>
+        article {
+            max-width: 579px;
+        }
+        article img {
+            max-width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Homepage</a>
+                </li>
+                <li>
+                    <a href="https://guites.bearblog.dev/blog/">my blog (aka deepest, most shameful thoughts)</a>
+                </li>
+                <li>
+                    <a href="https://bolha.us/@guites">mastodon (aka slice of life)</a>
+                </li>
+                <li>
+                    <a href="/lungodar">Lung-o-dar (or how I stopped coughing and started to love the lung)</a>
+                </li>
+                <li>
+                    what's up (with me lately)?
+                </li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <h1>what i'm up to</h1>
+        <p>chaos. anarchy. low quality computer programming.</p>
+        <h2>BUT ALSO</h2>
+        <noscript>
+            <p>Well if you had javascript on, you would see my latest toot or blogpost here. sorry ヽ(ー_ー )ノ</p>
+        </noscript>
+        <div id="updates-list">
+        
+        </div>
+    </main>
+    <script>
+        function pluralize(word, value) {
+            if (value != 1) {
+                return `${word}s`;
+            }
+            return word;
+        }
+
+        function timeAgo(dateString) {
+            const utcDate = new Date(dateString);
+            const now = new Date();
+
+            const difference = now - utcDate;
+
+            const seconds = Math.floor(difference / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const weeks = Math.floor(days / 7);
+            const months = Math.floor(days / 30);
+            const years = Math.floor(days / 365);
+
+            // Return the formatted "time ago" string
+            if (seconds < 60) return `${seconds} ${pluralize("second", seconds)} ago`;
+            if (minutes < 60) return `${minutes} ${pluralize("minute", minutes)} ago`;
+            if (hours < 24) return `${hours} ${pluralize("hour", hours)} ago`;
+            if (days < 7) return `${days} ${pluralize("day", days)} ago`;
+            if (weeks < 4) return `${weeks} ${pluralize("week", weeks)} ago`;
+            if (months < 12) return `${months} ${pluralize("month", months)} ago`;
+            return `${years} ${pluralize("year", years)} ago`;
+        }
+
+        function getRandomIntInclusive(min, max) {
+          const minCeiled = Math.ceil(min);
+          const maxFloored = Math.floor(max);
+          return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+        }
+
+
+        async function getData(rss_url) {
+           const response = await fetch(rss_url)
+           if (!response.ok) return null;
+           const text = await response.text();
+           const data = new window.DOMParser().parseFromString(text, "text/xml")
+           return data;
+        }
+
+        function formatBlogData(data) {
+           const item = data.querySelector("item");
+
+           const link = item.querySelector("link").innerHTML;
+           const title = item.querySelector("title").textContent;
+           const pubDate = item.querySelector("pubDate").textContent;
+           const pTags = item.querySelector("description")
+               .textContent
+               .split("<p>")
+               .filter((p) => p != "");
+           const pTag = pTags[getRandomIntInclusive(0, pTags.length - 1)]
+           const content = pTag.split("</p>")[0]
+
+           const article = document.createElement("article");
+           const h1 = document.createElement("h1");
+           const blockquote = document.createElement("blockquote");
+           const a = document.createElement("a");
+
+           h1.textContent = title;
+
+           blockquote.cite = link;
+            blockquote.innerHTML = `<p class="citation">${content}</p><p>me on <a href="${link}">my blog</a>, ${timeAgo(pubDate)}.</p>`;
+
+
+           article.appendChild(h1);
+           article.appendChild(blockquote);
+           return article;
+        }
+
+        function formatMastodonData(data) {
+           const items = data.querySelectorAll("item");
+            const item = items[getRandomIntInclusive(0, items.length - 1)];
+
+           const link = item.querySelector("link").innerHTML;
+           const pubDate = item.querySelector("pubDate").textContent;
+           const content = item.querySelector("description").textContent;
+           const images = [...item.children].filter((c) => c.nodeName == "media:content" && c.getAttribute("type").startsWith("image"));
+
+
+           const article = document.createElement("article");
+           const h1 = document.createElement("h1");
+           const blockquote = document.createElement("blockquote");
+           const a = document.createElement("a");
+
+           h1.textContent = "toot";
+
+           blockquote.cite = link;
+            blockquote.innerHTML = `<p class="citation">${content}</p><p>me on <a href="${link}">mastodon</a>, ${timeAgo(pubDate)}.</p>`;
+
+
+           article.appendChild(h1);
+           if (images.length > 0) {
+               const image = images[0];
+               const imgEl = document.createElement("img");
+               imgEl.src = image.getAttribute("url");
+               imgEl.alt = image.textContent;
+               imgEl.loading = "lazy";
+               article.appendChild(imgEl);
+           }
+           article.appendChild(blockquote);
+           return article;
+
+        }
+
+        window.addEventListener("load", async () => {
+            const updatesList = document.getElementById("updates-list");
+
+            const mastodonUrl = "https://bolha.us/@guites.rss"
+            const blogUrl = "./bearblog.rss"
+
+            const blogData = await getData(blogUrl);
+            if (blogData !== null) {
+                const blogArticle = formatBlogData(blogData);
+                updatesList.appendChild(blogArticle);
+            }
+           
+            const mastodonData = await getData(mastodonUrl);
+            if (mastodonData !== null) {
+                const toot = formatMastodonData(mastodonData);
+                updatesList.appendChild(toot);
+            }
+        });
+    </script>
+</body>
+
+</html>
