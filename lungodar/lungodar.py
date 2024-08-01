@@ -53,6 +53,9 @@ def start_html_doc():
         <nav>
             <ul>
                 <li>
+                    <a href="/">Homepage</a>
+                </li>
+                <li>
                     <a href="https://guites.bearblog.dev/blog/">my blog (aka deepest, most shameful thoughts)</a>
                 </li>
                 <li>
@@ -64,7 +67,7 @@ def start_html_doc():
         <hr>
     </header>
    <main>
-        <h1>Guite's official Lung-o-dar 🫁</h1>
+        <h1>guites' official Lung-o-dar 🫁</h1>
         <p>This is a very anxious page where I track my life as a non smoker. There are skulls <sup>💀</sup> on days I've had a cigarette, and a sticker <sup>🚭</sup> on the ones I haven't.</p>
         <p>You can put your mouse on the recorded days to get a glimpse of how I was feeling that particular moment.</p>
         <p><strong>My last day as a smoker was 28/07/2024</strong>. Every cigarette from there on can be seen as a misstep =P.</p>
