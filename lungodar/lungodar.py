@@ -83,6 +83,30 @@ def start_html_doc():
 """
 
 
+def days_in_month(dt):
+    return calendar.monthrange(dt.year, dt.month)[1]
+
+
+def get_month_statistics(month, num_days, _records):
+    smoke_free_days = 0
+    for d, r in _records.items():
+        if r["smoked"] != "no":
+            continue
+        if d.month == month:
+            smoke_free_days += 1
+    pctg_free = (smoke_free_days / num_days) * 100
+    return f"""
+        <tr>
+            <th colspan="7">
+                <label>{'%.2f'%(pctg_free)}% smoke free
+                    <progress max="{num_days}" value="{smoke_free_days}">
+                        {'%.2f'%(pctg_free)}%
+                    </progress>
+                </label>
+            </th>
+        </tr>"""
+
+
 def finish_html_doc():
     return """
             </section>
@@ -92,7 +116,7 @@ def finish_html_doc():
 """
 
 
-def start_month_table(month):
+def start_month_table(month, stats):
     return f"""
         <td>
             <table class="month" border="0" cellpadding="0" cellspacing="0">
@@ -100,6 +124,7 @@ def start_month_table(month):
                 <tr>
                     <th class="month" colspan="7">{calendar.month_name[month]}</th>
                 </tr>
+                {stats}
                 <tr>
                     <th class="mon">Mon</th>
                     <th class="tue">Tue</th>
@@ -154,9 +179,17 @@ while current_date <= end_date:
     year = current_date.year
     month = current_date.month
 
-    html_output += start_month_table(month)
-
+    current_month_num_days = days_in_month(current_date)
     current_month_calendar = calendar.monthcalendar(year, month)
+
+    current_month_stats = get_month_statistics(
+        month,
+        current_month_num_days,
+        records,
+    )
+
+    html_output += start_month_table(month, current_month_stats)
+
     for week in current_month_calendar:
         html_output += "<tr>"
         for day in week:
@@ -171,10 +204,9 @@ while current_date <= end_date:
         html_output += "</tr>"
     html_output += finish_month_table()
 
-    days_in_month = lambda dt: calendar.monthrange(dt.year, dt.month)[1]
     # goes back to the first day of the current month
     # offset by the number of days in the current month
-    first_day = current_date.replace(day=1) + timedelta(days_in_month(current_date))
+    first_day = current_date.replace(day=1) + timedelta(current_month_num_days)
     current_date = first_day
     months_in_tr += 1
 html_output += finish_html_doc()

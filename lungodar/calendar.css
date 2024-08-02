@@ -20,6 +20,11 @@ td {
   padding: 5px;
 }
 
+table th label {
+    display: flex;
+    flex-direction: column;
+}
+
 section {
   display: flex;
   flex-wrap: wrap;
