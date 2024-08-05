@@ -97,7 +97,8 @@
         }
 
         function formatBlogData(data) {
-           const item = data.querySelector("item");
+           const items = data.querySelectorAll("item");
+           const item = items[getRandomIntInclusive(0, items.length - 1)];
 
            const link = item.querySelector("link").innerHTML;
            const title = item.querySelector("title").textContent;
