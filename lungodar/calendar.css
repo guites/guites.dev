@@ -1,4 +1,4 @@
-body {
+    body {
   font: 16px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
 }
 
@@ -25,7 +25,7 @@ table th label {
     flex-direction: column;
 }
 
-section {
+section.calendars {
   display: flex;
   flex-wrap: wrap;
   max-width: 900px;
@@ -33,6 +33,17 @@ section {
   justify-content: center;
   align-items: center;
 }
+
+section.badges {
+    margin: 25px;
+}
+
+img.badge:hover {
+    transition: 100ms;
+    position: relative;
+    scale: 2;
+}
+
 
 /**
  * Tooltip Styles

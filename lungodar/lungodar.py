@@ -79,7 +79,7 @@ def start_html_doc():
         <h2>2024</h2>
         <p>amidst the haze</p>
         </div>
-        <section>
+        <section class="calendars">
 """
 
 
@@ -107,12 +107,9 @@ def get_month_statistics(month, num_days, _records):
         </tr>"""
 
 
-def finish_html_doc():
+def finish_tables_section():
     return """
             </section>
-        </main>
-    </body>
-</html>
 """
 
 
@@ -168,8 +165,45 @@ def add_noday_td():
     return "<td class='noday'></td>"
 
 
+def get_streak_from_records(_records, streak, curr_day):
+    if streak is None:
+        streak = 0
+    if curr_day is None:
+        curr_day = datetime.now().date() - timedelta(days=1)
+
+    if curr_day not in _records:
+        return streak
+    record = _records[curr_day]
+    smoked = record["smoked"] != "no"
+    if smoked:
+        return streak
+
+    streak += 1
+    curr_day = curr_day - timedelta(days=1)
+    print(f"curr_day: {curr_day}, streak: {streak}")
+    return get_streak_from_records(_records, streak, curr_day)
+
+
+def badges_section(streak):
+    badge_html = f"""
+        <section class="badges">
+            <h2>Streak</h2>
+            <p>Not smoking for <strong>{streak}</strong> consecutive days!</p>"""
+    badges = [{"min_streak": 15, "src": "badges/smoke-free-15.png", "alt": "Sem cigarro - 15 dias"}]
+    for badge in badges:
+        if streak >= badge["min_streak"]:
+            badge_html += f"""
+                <img class="badge" src='{badge["src"]}' loading="lazy" alt='{badge["alt"]}'>"""
+    badge_html += "</section>"
+    return badge_html
+
+
 html_output = start_html_doc()
 current_date = start_date
+
+# holds the current number of days without smoking in a row
+streak = get_streak_from_records(records, None, None)
+
 months_in_tr = 0  # hold up to three months per table row
 while current_date <= end_date:
     if months_in_tr >= 3:
@@ -209,7 +243,14 @@ while current_date <= end_date:
     first_day = current_date.replace(day=1) + timedelta(current_month_num_days)
     current_date = first_day
     months_in_tr += 1
-html_output += finish_html_doc()
+html_output += finish_tables_section()
+
+html_output += badges_section(streak)
+
+html_output += """
+        </main>
+    </body>
+</html>"""
 
 with open("index.html", mode="w") as file:
     file.write(html_output)
