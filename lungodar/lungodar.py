@@ -180,7 +180,6 @@ def get_streak_from_records(_records, streak, curr_day):
 
     streak += 1
     curr_day = curr_day - timedelta(days=1)
-    print(f"curr_day: {curr_day}, streak: {streak}")
     return get_streak_from_records(_records, streak, curr_day)
 
 
