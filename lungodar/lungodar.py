@@ -53,17 +53,7 @@ def start_html_doc():
         <nav>
             <ul>
                 <li>
-                    <a href="/">Homepage</a>
-                </li>
-                <li>
-                    <a href="https://guites.bearblog.dev/blog/">my blog (aka deepest, most shameful thoughts)</a>
-                </li>
-                <li>
-                    <a href="https://bolha.us/@guites">mastodon (aka slice of life)</a>
-                </li>
-                <li>Lung-o-dar (or how I stopped coughing and started to love the lung)</li>
-                <li>
-                    <a href="/whatsup">what's up (with me lately)?</a>
+                    <a href="/">Index</a>
                 </li>
             </ul>
         </nav>
