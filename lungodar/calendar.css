@@ -44,6 +44,10 @@ img.badge:hover {
     scale: 2;
 }
 
+progress {
+    width: 100%;
+}
+
 
 /**
  * Tooltip Styles
