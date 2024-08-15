@@ -178,7 +178,18 @@ def badges_section(streak):
         <section class="badges">
             <h2>Streak</h2>
             <p>Not smoking for <strong>{streak}</strong> consecutive days!</p>"""
-    badges = [{"min_streak": 15, "src": "badges/smoke-free-15.png", "alt": "Sem cigarro - 15 dias"}]
+    badges = [
+        {
+            "min_streak": 15,
+            "src": "badges/smoke-free-15.png",
+            "alt": "Sem cigarro - 15 dias",
+        },
+        {
+            "min_streak": 20,
+            "src": "badges/rattin-btn.png",
+            "alt": "20 days ratting away",
+        }
+    ]
     for badge in badges:
         if streak >= badge["min_streak"]:
             badge_html += f"""
