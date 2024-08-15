@@ -38,6 +38,10 @@ section.badges {
     margin: 25px;
 }
 
+img.badge {
+    image-rendering: pixelated;
+}
+
 img.badge:hover {
     transition: 100ms;
     position: relative;
