@@ -188,6 +188,11 @@ def badges_section(streak):
             "min_streak": 20,
             "src": "badges/rattin-btn.png",
             "alt": "20 days ratting away",
+        },
+        {
+            "min_streak": 25,
+            "src": "badges/snorpy-button.gif",
+            "alt": "25 days",
         }
     ]
     for badge in badges:
