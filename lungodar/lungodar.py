@@ -193,6 +193,11 @@ def badges_section(streak):
             "min_streak": 25,
             "src": "badges/snorpy-button.gif",
             "alt": "25 days",
+        },
+        {
+            "min_streak": 30,
+            "src": "badges/30-cavera.png",
+            "alt": "30 days ago",
         }
     ]
     for badge in badges:
