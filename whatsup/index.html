@@ -12,6 +12,17 @@
         article img {
             max-width: 200px;
         }
+        .pixel-arts {
+            margin: 0 50px;
+        }
+        img.badge {
+            image-rendering: pixelated;
+        }
+        img.badge:hover {
+            transition: 100ms;
+            position: relative;
+            scale: 2;
+        }
     </style>
 </head>
 
@@ -28,7 +39,19 @@
     </header>
     <main>
         <h1>what i'm up to</h1>
-        <p>chaos. anarchy. low quality computer programming.</p>
+        <p>
+            chaos. anarchy.
+        </p>
+            <ul>
+                <p>low quality:</p>
+                <li>[x] computer programming.</li>
+                <li>[x] pixel art</li>
+            </ul>
+        <section class="pixel-arts">
+            <img class="badge" src="./user___bash-mate-invader-bright-1.gif" alt='animação em pixel art de um alien do jogo space invaders. Ele começa em preto com um fundo roxo. Conforme a animação avança ele vai ficando verde.
+
+    Em cima dele aparece escrito "BASH", e embaixo, "MATE"'>
+        </section>
         <h2>BUT ALSO</h2>
         <noscript>
             <p>Well if you had javascript on, you would see my latest toot or blogpost here. sorry ヽ(ー_ー )ノ</p>
