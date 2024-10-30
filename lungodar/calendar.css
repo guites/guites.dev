@@ -58,6 +58,11 @@ progress {
  * source: https://chrisbracco.com/a-simple-css-tooltip/
  */
 
+/* Signals that there is a tooltip with a highlight */
+[data-tooltip] {
+    background-color: yellow;
+}
+
 /* Add this attribute to the element that needs a tooltip */
 [data-tooltip] {
   position: relative;
