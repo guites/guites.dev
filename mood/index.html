@@ -9,11 +9,23 @@
         main {
             max-width: 100vw;
         }
+
         main img {
-            max-width: 100%;
+            max-width: 500px;
+            width: 100%;
+            object-fit: contain;
         }
+
         main video {
-            max-width: 100%;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        #gallery {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -32,27 +44,36 @@
     <main>
         <h1>guites' mood board</h1>
         <p>doing wall sits because I've got weak knees and strong ambitions</p>
-        <section>
-            <img src="./meets-basket.jpg">
-            <img src="./spooky-catita.jpg">
-            <img src="./tree-way.jpeg">
-            <img src="./statue.jpg">
-            <img src="./window-view.jpg">
-            <img src="./black-princess.jpg">
-            <img src="./2024-08-16-zzzmaninha.png">
-            <img src="./sleepy-bu.jpg">
-            <video loop controls src="./bathroom-or-whatever.mp4"></video>
-            <img src="./streets-of-poa.jpg">
-            <img src="./sinatra.jpg">
-            <img src="./whomst.jpg">
-            <video loop controls src="./shaky-tower.mp4"></video>
-            <img src="./birb.jpg">
-            <img src="./flower-of-pasta.jpeg">
-            <img src="./tiao-bock.jpg">
-            <video loop controls src="./wizz-snoop.mp4"></video>
-            <img src="./meet-amyl.jpg">
-            <img src="./sun-go-down.jpg">
-            <img src="./chaos-floripa.jpg">
+        <section id="gallery">
+            <img style="min-height: 602px" loading="eager" src="./meets-basket.jpg">
+            <img style="min-height: 358px" loading="lazy" src="./spooky-catita.jpg">
+            <img style="min-height: 533px" loading="lazy" src="./tree-way.jpeg">
+            <img style="min-height: 400px" loading="lazy" src="./statue.jpg">
+            <img style="min-height: 400px" loading="lazy" src="./window-view.jpg">
+            <img style="min-height: 400px" loading="lazy" src="./black-princess.jpg">
+            <img style="min-height: 300px" loading="lazy" src="./2024-08-16-zzzmaninha.png">
+            <img style="min-height: 533px" loading="lazy" src="./sleepy-bu.jpg">
+
+            <video loop controls preload="none" style="min-height: 400" poster="./bathroom-or-whatever.mp4.jpg">
+                <source src="./bathroom-or-whatever.mp4" type="video/mp4">
+            </video>
+            <img style="min-height: 400px" loading="lazy" src="./streets-of-poa.jpg">
+            <img style="min-height: 199px" loading="lazy" src="./sinatra.jpg">
+            <img style="min-height: 290px" loading="lazy" src="./whomst.jpg">
+
+            <video loop controls preload="none" style="min-height: 400" poster="./shaky-tower.mp4.jpg">
+                <source src="./shaky-tower.mp4" type="video/mp4">
+            </video>
+            <img style="min-height: 400px" loading="lazy" src="./birb.jpg">
+            <img style="min-height: 533px" loading="lazy" src="./flower-of-pasta.jpeg">
+            <img style="min-height: 400px" loading="lazy" src="./tiao-bock.jpg">
+
+            <video loop controls preload="none" style="min-height: 166" poster="./wizz-snoop.mp4.jpg">
+                <source src="./wizz-snoop.mp4" type="video/mp4">
+            </video>
+            <img style="min-height: 300px" loading="lazy" src="./meet-amyl.jpg">
+            <img style="min-height: 225px" loading="lazy" src="./sun-go-down.jpg">
+            <img style="min-height: 477px" loading="lazy" src="./chaos-floripa.jpg">
         </section>
     </main>
 
