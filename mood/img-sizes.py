@@ -13,6 +13,11 @@ def get_target_height(filename, target_width):
 
 
 files = [
+    "./arrombadores.mp4",
+    "./willhelm-screamer.jpg",
+    "./pharmacy.jpg",
+    "./face-to-face-band-pic.jpg",
+    "./face-to-face-sweaty-bass-man.mp4",
     "./meets-basket.jpg",
     "./spooky-catita.jpg",
     "./tree-way.jpeg",
