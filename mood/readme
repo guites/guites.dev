@@ -1,0 +1,6 @@
+just fuckin
+
+    mogrify -resize 500x500 -format webp -path . *.png *.jpg *.jpeg *.bmp *.gif *.webp
+    rm *.png *.jpg *.jpeg *.bmp *.gif
+
+add files to img-sizes.py and run it to get the html. needs `pip3 install pillow opencv-python`.
