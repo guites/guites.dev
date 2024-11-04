@@ -3,4 +3,10 @@ just fuckin
     mogrify -resize 500x500 -format webp -path . *.png *.jpg *.jpeg *.bmp *.gif *.webp
     rm *.png *.jpg *.jpeg *.bmp *.gif
 
+for videos do this
+
+    ffmpeg -i face-to-face-sweaty-bass-man.mp4 -vf "scale=500:-2" -c:a copy face-to-face-sweaty-bass-man-res.mp4
+
+Then check if the resized is ok and substitute.
+
 add files to img-sizes.py and run it to get the html. needs `pip3 install pillow opencv-python`.
