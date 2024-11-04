@@ -13,31 +13,32 @@ def get_target_height(filename, target_width):
 
 
 files = [
+    "./cooking-soul-whateva-vol-2.webp",
+    "./willhelm-screamer.webp",
     "./arrombadores.mp4",
-    "./willhelm-screamer.jpg",
-    "./pharmacy.jpg",
-    "./face-to-face-band-pic.jpg",
+    "./pharmacy.webp",
+    "./face-to-face-band-pic.webp",
     "./face-to-face-sweaty-bass-man.mp4",
-    "./meets-basket.jpg",
-    "./spooky-catita.jpg",
-    "./tree-way.jpeg",
-    "./statue.jpg",
-    "./window-view.jpg",
-    "./black-princess.jpg",
-    "./2024-08-16-zzzmaninha.png",
-    "./sleepy-bu.jpg",
+    "./meets-basket.webp",
+    "./spooky-catita.webp",
+    "./tree-way.webp",
+    "./statue.webp",
+    "./window-view.webp",
+    "./black-princess.webp",
+    "./2024-08-16-zzzmaninha.webp",
+    "./sleepy-bu.webp",
     "./bathroom-or-whatever.mp4",
-    "./streets-of-poa.jpg",
-    "./sinatra.jpg",
-    "./whomst.jpg",
+    "./streets-of-poa.webp",
+    "./sinatra.webp",
+    "./whomst.webp",
     "./shaky-tower.mp4",
-    "./birb.jpg",
-    "./flower-of-pasta.jpeg",
-    "./tiao-bock.jpg",
+    "./birb.webp",
+    "./flower-of-pasta.webp",
+    "./tiao-bock.webp",
     "./wizz-snoop.mp4",
-    "./meet-amyl.jpg",
-    "./sun-go-down.jpg",
-    "./chaos-floripa.jpg",
+    "./meet-amyl.webp",
+    "./sun-go-down.webp",
+    "./chaos-floripa.webp",
 ]
 
 img_extensions = (".png", ".jpg", ".jpeg", ".bmp", ".gif", ".webp")
@@ -67,15 +68,15 @@ for idx, filename in enumerate(files):
             raise ValueError(
                 f"Couldn't generate video thumbnail for {filename} (ノ°益°)ノ"
             )
-        video_poster = f"{filename}.jpg"
+        video_poster = f"{filename}.webp"
         cv2.imwrite(video_poster, frame)
         cap.release()
 
         min_height = get_target_height(video_poster, target_width)
         print(
             f"""
-            <video loop controls preload="none" style="min-height: {min_height}" poster="{video_poster}">
-                <source src="{filename}" type="video/mp4">
-            </video>"""
+<video loop controls preload="none" style="min-height: {min_height}" poster="{video_poster}">
+    <source src="{filename}" type="video/mp4">
+</video>"""
         )
         continue
