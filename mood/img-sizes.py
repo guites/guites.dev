@@ -24,26 +24,36 @@ files = [
     "./tree-way.webp",
     "./statue.webp",
     "./window-view.webp",
+    "./alan-turing-i-support-ai.mp4",
     "./black-princess.webp",
     "./2024-08-16-zzzmaninha.webp",
     "./sleepy-bu.webp",
     "./bathroom-or-whatever.mp4",
     "./streets-of-poa.webp",
     "./sinatra.webp",
+    "./jupy-aside.webp",
     "./whomst.webp",
+    "./creature-glow.mp4",
     "./shaky-tower.mp4",
     "./birb.webp",
     "./flower-of-pasta.webp",
     "./tiao-bock.webp",
     "./wizz-snoop.mp4",
     "./meet-amyl.webp",
-    "./sun-go-down.webp",
     "./chaos-floripa.webp",
+    "./dizzy.webp",
+    "./jupy-fades.mp4",
+    "./structure-and-interpretation.webp",
+    "./sun-go-down.webp"   
 ]
 
 img_extensions = (".png", ".jpg", ".jpeg", ".bmp", ".gif", ".webp")
 video_extensions = (".mp4",)
-target_width = 300
+target_width = 300 / 2 # smallest supported screen size (320px - 10px of padding on each side of the screen)
+columns = [
+    "<div class='left'>",
+    "<div class='right'>"
+]
 
 for idx, filename in enumerate(files):
     loading = "lazy"
@@ -54,10 +64,7 @@ for idx, filename in enumerate(files):
         min_height = get_target_height(filename, target_width)
 
         # Print the img html element
-        print(
-            f"""<img style="min-height: {min_height}px" loading="{loading}" src="{filename}">"""
-        )
-        continue
+        media = f"""<img style="min-height: {min_height}px" loading="{loading}" src="{filename}">"""
 
     if filename.lower().endswith(video_extensions):
 
@@ -73,10 +80,88 @@ for idx, filename in enumerate(files):
         cap.release()
 
         min_height = get_target_height(video_poster, target_width)
-        print(
+        media = (
             f"""
 <video loop controls preload="none" style="min-height: {min_height}" poster="{video_poster}">
     <source src="{filename}" type="video/mp4">
 </video>"""
         )
-        continue
+    
+    columns[idx % 2] += f"{media}\n"
+
+print("""
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mood | 🦝 guites webpage</title>
+
+    <style>
+        main {
+            max-width: 100vw;
+        }
+
+        main img {
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+
+        main video {
+            max-width: 100%;
+            margin-bottom: 4px;
+        }
+
+        #gallery {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+        .left, .right {
+            width: calc(50% - 2px);
+            float: left;
+            display: flex;
+            flex-direction: column;
+        }
+        .left {
+            margin-right: 4px;
+            align-items: flex-end;
+        }
+        .right {
+            align-items: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Index</a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <main>
+        <h1>guites' mood board</h1>
+        <p>doing wall sits because I've got weak knees and strong ambitions</p>
+        <section id="gallery">
+""")
+for column in columns:
+    print(f"{column}</div>\n")
+
+print("""
+      </section>
+    </main>
+</body>
+
+
+</html>""")
