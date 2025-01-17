@@ -7,6 +7,10 @@ for videos do this
 
     ffmpeg -i face-to-face-sweaty-bass-man.mp4 -vf "scale=500:-2" -c:a copy face-to-face-sweaty-bass-man-res.mp4
 
+maybe:
+
+    for vid in *.mp4; do ffmpeg -i "$vid" -vf "scale=500:-2" -c:a copy "$vid-res.mp4"; done
+
 Then check if the resized is ok and substitute.
 
 add files to img-sizes.py and run it to get the html. needs `pip3 install pillow opencv-python`.
