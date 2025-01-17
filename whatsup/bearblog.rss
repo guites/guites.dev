@@ -2,13 +2,48 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
   <channel>
     <title>guites' thoughts page</title>
-    <link>https://guites.bearblog.dev/</link>
+    <link>https://guites.bearblog.dev/rss/</link>
     <description>This page where I spew my brain innards.&#13;
 &#13;
 checkout my  &gt;:-)...</description>
+    <atom:link href="https://guites.bearblog.dev/rss/" rel="self"/>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
-    <lastBuildDate>Wed, 14 Aug 2024 16:50:12 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jan 2025 20:45:31 +0000</lastBuildDate>
+    <item>
+      <title>Fascínio periódico rotacional</title>
+      <link>https://guites.bearblog.dev/fascinio-periodico-rotacional/</link>
+      <description>&lt;p&gt;O meu interesse pelas coisas vem em ondas, com fases bem definidas.&lt;/p&gt;
+&lt;p&gt;Por muito tempo eu não entendi essa dinâmica, e muitas das minhas cicatrizes são produto de uma tendência a me entregar completamente a hobbies, dietas e rotinas.&lt;/p&gt;
+&lt;p&gt;A primeira coisa que eu gostei mesmo foi de beber, &lt;a href='https://guites.bearblog.dev/boot-the-cigarette/'&gt;depois de fumar&lt;/a&gt;, depois de andar de skate.&lt;/p&gt;
+&lt;p&gt;Surpreendentemente, são hobbies que possuem uma alta sinergia, e, na mais honesta busca por uma estética &lt;a href='https://www.youtube.com/watch?v=YjERa7LJKC0'&gt;hard podrera core&lt;/a&gt;, eu me dediquei integralmente a eles.&lt;/p&gt;
+&lt;p&gt;O que eu não sabia, na verdade, era que cada um dos interesses estava numa fase específica.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.ibb.co/rsFjJLj/Captura-de-Tela-2025-01-16-a-s-21-59-52.png" alt="&amp;quot;Gráfico mostrando a intensidade em função do tempo para alguns interesses: álcool, cigarro, skate. Cada interesse é uma onda senoidal deslocada meia fase, começando pelo álcool&amp;quot;" title="Gráfico mostrando a intensidade em função do tempo para alguns interesses: álcool, cigarro, skate. Cada interesse é uma onda senoidal deslocada meia fase, começando pelo álcool" /&gt;&lt;/p&gt;
+&lt;p&gt;No início, eu apenas bebia. Depois, comecei a fumar. Essa eu chamo de "Primeira Era", onde eu tinha apenas estes dois interesses.&lt;/p&gt;
+&lt;p&gt;Em algum momento, comecei a andar de skate.&lt;/p&gt;
+&lt;p&gt;O meu início no skate coincidiu com um momento de alto interesse no álcool, e baixo interesse no tabagismo.&lt;/p&gt;
+&lt;p&gt;Isso foi propício pros meus primeiros rolês: alcoolizado, corajoso, fumando pouco (em boa forma), com uma energia altíssima, aprendendo várias manobras e conhecendo diversos spots.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.ibb.co/m8574xz/Captura-de-Tela-2025-01-16-a-s-22-05-24.png" alt="&amp;quot;O mesmo gráfico de antes, com um detalhe em roxo numa parte onde a intensidade do álcool e skate estão altas, enquanto a do cigarro está baixa&amp;quot;" title="O mesmo gráfico de antes, com um detalhe em roxo numa parte onde a intensidade do álcool e skate estão altas, enquanto a do cigarro está baixa" /&gt;&lt;/p&gt;
+&lt;p&gt;Esse momento coincide com a mudança para a "Segunda Era", onde eu tenho as primeiras experiências com o malabarismo dos meus três hobbies. Em alguns momentos gosto mais de uns, e as pessoas com as quais me relaciono me puxam mais para outros.&lt;/p&gt;
+&lt;p&gt;Após um início intenso e alcoolizado, consigo criar um rotina onde eu vou de skate pro trabalho, me envolvo com a cultura local, faço exercícios com frequência, etc.&lt;/p&gt;
+&lt;p&gt;Mas com o passar do tempo, a combinação de interesses se torna perigosa novamente:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.ibb.co/X3bq5xw/Captura-de-Tela-2025-01-16-a-s-22-20-17.png" alt="&amp;quot;O mesmo gráfico, indicando um novo momento onde o interesse em álcool e skate está no alto. Mais à esquerda, o gráfico mostra que o interesse em skate não se recuperou mais, indo ao zero&amp;quot;" title="O mesmo gráfico, indicando um novo momento onde o interesse em álcool e skate está no alto. Mais à esquerda, o gráfico mostra que o interesse em skate não se recuperou mais, indo ao zero" /&gt;&lt;/p&gt;
+&lt;p&gt;O resultado é que eu entrei em rampas, lombadas, ruas atoladas de carro, e outros lugares de dificuldade muito acima da minha capacidade, ralando joelhos, quebrando ossos e rompendo ligamentos no processo.&lt;/p&gt;
+&lt;p&gt;Na busca pela raiz do problema, o skate acabou pagando o pato: era o mais fácil de largar, o que exigia mais força de vontade pra manter, e, infelizmente, o único que tinha algum saldo positivo nessa mistura.&lt;/p&gt;
+&lt;p&gt;Esse momento marca a entrada na "Terceira Era", onde o skate vai sendo lentamente abandonado, conforme cai sobre ele a culpa e o amargor das dores e sequelas.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Hoje em dia, quando um novo interesse se torna o centro da minha atenção, eu tento colocá-lo ao lado dos que já existem, mesmo os antigos e que estão um pouco abandonados.&lt;/p&gt;
+&lt;p&gt;Será que ele vai se alimentar de algo bom que eu venho cultivando?&lt;/p&gt;
+&lt;p&gt;Será que ele vai alimentar algum vício empurrado pra baixo do tapete?&lt;/p&gt;
+&lt;p&gt;Essa é a natureza do fascínio periódico rotacional.&lt;/p&gt;
+</description>
+      <author>hidden (guites)</author>
+      <guid isPermaLink="false">https://guites.bearblog.dev/fascinio-periodico-rotacional/</guid>
+      <category>life</category>
+      <category>português</category>
+      <category>writing</category>
+      <pubDate>Fri, 17 Jan 2025 01:36:00 +0000</pubDate>
+    </item>
     <item>
       <title>I can't remember my dad's words</title>
       <link>https://guites.bearblog.dev/i-cant-remember-my-dads-words/</link>
@@ -41,6 +76,8 @@ checkout my  &gt;:-)...</description>
 </description>
       <author>hidden (guites)</author>
       <guid isPermaLink="false">https://guites.bearblog.dev/seguir-o-cronograma/</guid>
+      <category>português</category>
+      <category>writing</category>
       <pubDate>Mon, 05 Aug 2024 01:07:00 +0000</pubDate>
     </item>
     <item>
@@ -127,6 +164,8 @@ checkout my  &gt;:-)...</description>
 </description>
       <author>hidden (guites)</author>
       <guid isPermaLink="false">https://guites.bearblog.dev/to-conceive-someone-else-and-a-web-app/</guid>
+      <category>english</category>
+      <category>life</category>
       <pubDate>Wed, 24 Jul 2024 20:53:34 +0000</pubDate>
     </item>
     <item>
@@ -143,6 +182,8 @@ checkout my  &gt;:-)...</description>
 </description>
       <author>hidden (guites)</author>
       <guid isPermaLink="false">https://guites.bearblog.dev/o-quanto-eu-quero-conhecer-quem-eu-amo/</guid>
+      <category>português</category>
+      <category>writing</category>
       <pubDate>Sun, 04 Feb 2024 05:06:16 +0000</pubDate>
     </item>
     <item>
@@ -159,6 +200,8 @@ checkout my  &gt;:-)...</description>
 </description>
       <author>hidden (guites)</author>
       <guid isPermaLink="false">https://guites.bearblog.dev/o-processo-migratorio-do-blogueiro-amador/</guid>
+      <category>português</category>
+      <category>writing</category>
       <pubDate>Sun, 21 Jan 2024 03:23:00 +0000</pubDate>
     </item>
     <item>
@@ -176,26 +219,9 @@ checkout my  &gt;:-)...</description>
 </description>
       <author>hidden (guites)</author>
       <guid isPermaLink="false">https://guites.bearblog.dev/addiction/</guid>
+      <category>english</category>
+      <category>life</category>
       <pubDate>Wed, 17 Jan 2024 12:00:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>A dificuldade de manter contato</title>
-      <link>https://guites.bearblog.dev/a-dificuldade-de-manter-contato-new/</link>
-      <description>&lt;p&gt;Existe uma intimidade que se desenvolve quando duas pessoas conversam de perto. Essa sensação de presteza, de dedicar o tempo um ao outro, sempre foi o que me atraiu a conhecer gente nova.&lt;/p&gt;
-&lt;p&gt;É como ganhar um pouco do tempo da pessoa e tomar ele pra si.&lt;/p&gt;
-&lt;p&gt;E depois que você o tem, ele não vai embora. E eu sempre fui bom em manter esse tempo comigo pelo tempo que for. Manter as lembranças vivas, sem precisar tocar muito nelas. Em momentos aleatórios do dia elas surgem, eu revivo as emoções de conversas, parcerias, anos de amizade em poucos segundos, e isso reafirma que o que vivemos foi verdadeiro.&lt;/p&gt;
-&lt;p&gt;Mas o próximo passo, o entrar em contato, o "lembrei de ti enquanto eu lavava a louça", ele é cruel. É um exercício de prostituição da lembrança. É dar uma serventia, o fardo da manutenção do convívio, a algo que não deveria precisar prestar contas.&lt;/p&gt;
-&lt;p&gt;E pra manter essa pureza da memória, eu fico receoso de entrar em contato.&lt;/p&gt;
-&lt;p&gt;Tenho amigos que encontro com intervalo de anos. A antiga amizade é restabelecida de forma imediata. Conversamos: um sabe, na visão do outro, quais detalhes do seu cotidiano vão ser mais apreciados. O atraso entre as duas vidas é posto em dia, de forma franca, com alguns pequenos pesares ("tu terias gostado de conhecer tal pessoa", "pensei em te convidar naquela vez, mas tu estavas longe") que são desculpados por ambos, devido à logística.&lt;/p&gt;
-&lt;p&gt;Mas ir me alimentando dos seus dia a dias de forma constante, acompanhando de longe, não é substituto pra convivência direta.&lt;/p&gt;
-&lt;p&gt;Existem exceções, como no caso da família, onde a preocupação é mais urgente, será que estão bem, será que estão se alimentando, será que precisam de ajuda? mas não no caso da amizade.&lt;/p&gt;
-&lt;p&gt;A amizade precisa ser direcionada. Eu quero saber da tua vida, mas quero que ela me seja contada por ti. Não quero ser exposto ao que tu vive com os outros, pela ótica de quem está próximo, pelos olhos de quem eu não conheço, precisando interpretar sentimentos dos quais eu não participo.&lt;/p&gt;
-&lt;p&gt;E por isso é difícil manter contato.&lt;/p&gt;
-&lt;p&gt;É difícil perguntar "como vão as coisas? e o trampo?" quando realmente se tem interesse em alguém, sem ter tempo pra assimilar o que é dito. Quando a gente conhece alguém, a gente sabe quando é melhor sentir saudade sozinho.&lt;/p&gt;
-</description>
-      <author>hidden (guites)</author>
-      <guid isPermaLink="false">https://guites.bearblog.dev/a-dificuldade-de-manter-contato-new/</guid>
-      <pubDate>Tue, 16 Jan 2024 11:49:39 +0000</pubDate>
     </item>
   </channel>
 </rss>
