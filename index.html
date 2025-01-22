@@ -11,6 +11,20 @@
     <header>
         <h1>guites website</h1>
         <p>hey fellas. this is my personal website. It's got a lot of pages so this one serves as an index.</p>
+        <div>⚠️ (eternally) under construction ⚠️</div>
+        <img data-bg="transparent" style="max-width: 100%;" src="raccy-res.png">
+        <script>
+            const image = document.querySelector('img');
+            console.log(image);
+            const bgColors = ['transparent', '#a6a6a6', '#232323', '#e3e3e3', '#636363', '#aa7d35', '#4c4c4c', '#6a5445', '#cccccc'];
+            image.addEventListener('click', () => {
+                const currBg = image.getAttribute('data-bg');
+                const currIndex = bgColors.indexOf(currBg);
+                const nextIndex = (currIndex + 1) % bgColors.length;
+                image.setAttribute('data-bg', bgColors[nextIndex]);
+                image.style.backgroundColor = bgColors[nextIndex];
+            });
+        </script>
         <hr>
     </header>
     <main>
@@ -19,39 +33,56 @@
                 <li>
                     Index (you're here)
                 </li>
-                <ul>
-                    <p>External</p>
-                    <li>
-                        <a href="https://guites.bearblog.dev/blog/">my blog (aka deepest, most shameful thoughts)</a>
-                    </li>
-                    <li>
-                        <a href="https://bolha.us/@guites">mastodon (aka slice of life)</a>
-                    </li>
-                    <li>
-                        <a href="mailto:guites@guites.dev">e-mail (hit me up)</a>
-                    </li>
-                </ul>
-                <ul>
-                    <p>Internal</p>
-                    <li>
-                        <a href="/lungodar">Lung-o-dar (or how I stopped coughing and started to love the lung)</a>
-                    </li>
-                    <li>
-                        <a href="/whatsup">what's up (with me lately)?</a>
-                    </li>
-                    <li>
-                        <a href="/roadmap.html">my roadmap (all these things i've done)</a>
-                    </li>
-                    <li>
-                        <a href="/mood">mood (img board)</a>
-                    </li>
-                </ul>
+                <li>
+                    <h1>External</h1>
+
+                    <p>These are the places you can contact me at or find me in. I mainly dwell on shitty foruns or
+                        hang out at the fediverse.</p>
+                    <ul>
+                        <li>
+                            <a href="https://guites.bearblog.dev/blog/">my blog (aka deepest, most shameful
+                                thoughts)</a>
+                        </li>
+                        <li>
+                            <a href="https://bolha.us/@guites">mastodon (aka slice of life)</a>
+                        </li>
+                        <li>
+                            <a href="mailto:guites@guites.dev">e-mail (hit me up)</a>
+                        </li>
+                        <li>
+                            <a href="https://t.me/guites">telegram</a>
+                        </li>
+                        <li>
+                            <a href="https://basementcommunity.com/users/guites">basement community</a>
+                        </li>
+                        <li>
+                            <a href="https://forum.agoraroad.com/index.php?members/guites.9106/">Agora Road</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h2>Internal</h2>
+                    <p>Actual pages on this website. That I made myself! With these hands of mine</p>
+                    <ul>
+                        <li>
+                            <a href="/lungodar">Lung-o-dar (or how I stopped coughing and started to love the lung)</a>
+                        </li>
+                        <li>
+                            <a href="/whatsup">what's up (with me lately)?</a>
+                        </li>
+                        <li>
+                            <a href="/roadmap.html">my roadmap (all these things i've done)</a>
+                        </li>
+                        <li>
+                            <a href="/mood">mood (img board)</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
         <video src="./chinup.mp4" autoplay loop muted playsinline style="width: 479px; max-width: 100%;"></video>
     </main>
     <footer>
-        <div>⚠️ under construction</div>
         <div>
             <a href="https://fediring.net/previous?host=guites.dev">←</a>
             <a href="https://fediring.net/">Fediring</a>
