@@ -12,7 +12,7 @@
             border-collapse: collapse;
             border: 2px solid rgb(200, 200, 200);
             letter-spacing: 1px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         td,
@@ -37,8 +37,45 @@
             background-color: rgb(245, 245, 245);
         }
 
+
         caption {
             padding: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            table {
+                font-size: 0.95rem;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                display: flex;
+                flex-direction: column;
+                border-bottom: 2px solid black;
+            }
+
+            tr>td:first-child::before {
+                content: 'url';
+                font-weight: bold;
+            }
+
+            tr>td:nth-child(2)::before {
+                content: 'name';
+                font-weight: bold;
+            }
+
+            tr>td:nth-child(3)::before {
+                content: 'found';
+                font-weight: bold;
+            }
+
+            tr>td:nth-child(4)::before {
+                content: 'tags';
+                font-weight: bold;
+            }
         }
     </style>
 </head>
@@ -65,20 +102,113 @@
                 <tr>
                     <th scope="col">url</th>
                     <th scope="col">name</th>
-                    <th scope="col">found on</th>
+                    <th scope="col">found</th>
                     <th scope="col">tags</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><a href="https://verns.world">verns.world</a></td>
-                    <td>Vern's World</td>
-                    <td><time datetime="2025-01-24">Jan 24nd 2025</time></td>
+                    <td>
+                        <a href="https://baixacultura.org/">baixacultura.org</a>
+                    </td>
+                    <td>
+                        Baixa Cultura
+                    </td>
+                    <td>
+                        <time datetime="01-01-2022">Somewhere back in 2022</time>
+                    </td>
+                    <td>
+                        <span class="badge">writing</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://rekt.network/">rekt.network</a>
+                    </td>
+                    <td>
+                        Rekt Network Radio Platform
+                    </td>
+                    <td>
+                        <time datetime="2023-05-31">May 31st 2023</time>
+                    </td>
+                    <td>
+                        <span class="badge">music</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://verns.world">verns.world</a>
+                    </td>
+                    <td>
+                        Vern's World
+                    </td>
+                    <td>
+                        <time datetime="2025-01-24">Jan 24nd 2025</time>
+                    </td>
                     <td>
                         <span class="badge">
                             aesthetic
                         </span>,
                         <span class="badge">music</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://smugbear.neocities.org/">smugbear.neocities.org</a>
+                    </td>
+                    <td>
+                        sleepycub|smugbear
+                    </td>
+                    <td>
+                        <time datetime="2025-01-24">Jan 24nd 2025</time>
+                    </td>
+                    <td>
+                        <span class="badge">aesthetic</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://callmemanatee.neocities.org/">callmemanatee.neocities.org</a>
+                    </td>
+                    <td>
+                        call me manatee
+                    </td>
+                    <td>
+                        <time datetime="2025-01-24">Jan 24nd 2025</time>
+                    </td>
+                    <td>
+                        <span class="badge">aesthetic</span>,
+                        <span class="badge">shrine</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://bearycremedelight.neocities.org/">bearycremedelight.neocities.org</a>
+                    </td>
+                    <td>
+                        beary creme delight
+                    </td>
+                    <td>
+                        <time datetime="2025-01-24">Jan 24nd 2025</time>
+                    </td>
+                    <td>
+                        <span class="badge">aesthetic</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://copiona.com">copiona.com</a>
+                    </td>
+                    <td>
+                        copiona (librenauta)
+                    </td>
+                    <td>
+                        <time datetime="2025-01-25">Jan 25th 2025</time>
+                    </td>
+                    <td>
+                        <span class="badge">writing</span>,
+                        <span class="badge">aesthetic</span>,
+                        <span class="badge">inspiration</span>
                     </td>
                 </tr>
             </tbody>
