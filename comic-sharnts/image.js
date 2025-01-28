@@ -5,10 +5,15 @@ const fontSize = document.getElementById("fontSize");
 
 const downloadBtn = document.getElementById("download");
 
+const comicSans = new FontFace("Comic", "url(comic-webfont.woff2)", {
+  style: "normal",
+  weight: "normal",
+});
+
 const textbox = new fabric.Textbox(
   "> make tshirt\n> feel like a real human beign",
   {
-    fontFamily: "Comic Sans MS",
+    fontFamily: "Comic",
     fill: "#789922",
     width: 258,
     originX: "center",
@@ -19,27 +24,30 @@ const textbox = new fabric.Textbox(
   }
 );
 
-fabric.Image.fromURL("./black-shirt-res.png").then((img) => {
-  img.set({
-    lockMovementX: true,
-    lockMovementY: true,
-    lockScalingX: true,
-    lockScalingY: true,
-    lockRotation: true,
-    selectable: false,
+Promise.all([comicSans.load()]).then(() => {
+  document.fonts.add(comicSans);
+  fabric.Image.fromURL("./black-shirt-res.png").then((img) => {
+    img.set({
+      lockMovementX: true,
+      lockMovementY: true,
+      lockScalingX: true,
+      lockScalingY: true,
+      lockRotation: true,
+      selectable: false,
+    });
+    canvas.add(img);
+    canvas.add(textbox);
   });
-  canvas.add(img);
-  canvas.add(textbox);
-});
 
-colorPicker.addEventListener("input", (e) => {
-  textbox.set("fill", e.target.value);
-  canvas.requestRenderAll();
-});
+  colorPicker.addEventListener("input", (e) => {
+    textbox.set("fill", e.target.value);
+    canvas.requestRenderAll();
+  });
 
-fontSize.addEventListener("input", (e) => {
-  textbox.set("fontSize", parseInt(e.target.value));
-  canvas.requestRenderAll();
+  fontSize.addEventListener("input", (e) => {
+    textbox.set("fontSize", parseInt(e.target.value));
+    canvas.requestRenderAll();
+  });
 });
 
 // prevent textbox from being larger than 258px on resize
