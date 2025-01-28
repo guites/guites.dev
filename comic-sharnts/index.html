@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comic sharnts | 🦝 guites webpage</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Index</a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
+    <h1>comic sharnts</h1>
+    <p><small>A pronúncia é exatamente como se lê</small></p>
+    <section id="controls">
+        <label>
+            Text color
+            <input type="color" id="color" value="#789922">
+        </label>
+        <label>
+            Font size
+            <input type="range" id="fontSize" min="10" max="100" value="17">
+        </label>
+    </section>
+    <canvas id="canvas" width="450" height="457"></canvas>
+    <button id="download">Download t-shirt</button>
+    <h2>Compartilhe no fedi</h2>
+    <p>Pra sua camiseta aparecer aqui, compartilhe com a tag <a
+            href="https://mastodon.social/tags/comicSharnts">#comicSharnts</a></p>
+    <p>Se você não tem conta no mastodon, pode me mandar a imagem por email: <a
+            href="mailto:guites@guites.dev">guites@guites.dev</a></p>
+    <section id="images">
+
+    </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/fabric@latest/dist/index.min.js"></script>
+<script src="./image.js"></script>
+<script>
+    // load posts with #comicSharnts from mastodon api
+    const images = document.getElementById('images');
+    fetch('https://mastodon.social/api/v1/timelines/tag/comicSharnts')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(post => {
+                const aTag = document.createElement("a");
+                aTag.href = post.url;
+                const img = document.createElement("img")
+                img.src = post.media_attachments[0].url;
+                img.alt = post.media_attachments[0].description;
+                img.loading = "lazy";
+                aTag.appendChild(img);
+                images.appendChild(aTag);
+            });
+        });
+</script>
+
+</html>
