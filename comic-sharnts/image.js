@@ -2,18 +2,28 @@ const canvasEl = document.getElementById("canvas");
 const canvas = new fabric.Canvas(canvasEl);
 const colorPicker = document.getElementById("color");
 const fontSize = document.getElementById("fontSize");
+const fontFamily = document.getElementById("fontFamily");
 
 const downloadBtn = document.getElementById("download");
 
-const comicSans = new FontFace("Comic", "url(comic-webfont.woff2)", {
+const comicSans = new FontFace("ComicSans", "url(comic-webfont.woff2)", {
   style: "normal",
   weight: "normal",
 });
 
+const gillSansBold = new FontFace(
+  "GillSansBold",
+  "url(gill-sans-bold-webfont.woff2)",
+  {
+    style: "normal",
+    weight: "700",
+  }
+);
+
 const textbox = new fabric.Textbox(
   "> make tshirt\n> feel like a real human beign",
   {
-    fontFamily: "Comic",
+    fontFamily: "ComicSans",
     fill: "#789922",
     width: 258,
     originX: "center",
@@ -24,8 +34,9 @@ const textbox = new fabric.Textbox(
   }
 );
 
-Promise.all([comicSans.load()]).then(() => {
+Promise.all([comicSans.load(), gillSansBold.load()]).then(() => {
   document.fonts.add(comicSans);
+  document.fonts.add(gillSansBold);
   fabric.Image.fromURL("./black-shirt-res.png").then((img) => {
     img.set({
       lockMovementX: true,
@@ -46,6 +57,11 @@ Promise.all([comicSans.load()]).then(() => {
 
   fontSize.addEventListener("input", (e) => {
     textbox.set("fontSize", parseInt(e.target.value));
+    canvas.requestRenderAll();
+  });
+
+  fontFamily.addEventListener("input", (e) => {
+    textbox.set("fontFamily", e.target.value);
     canvas.requestRenderAll();
   });
 });
